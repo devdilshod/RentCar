@@ -1,46 +1,22 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
-import Login, { action as loginAction } from "./pages/Login";
-import Register, { action as registerAction } from "./pages/Register";
-import { store } from "./store";
-
-const HomeLayout = () => {
-  return (
-    <div className="min-h-screen bg-[#F6F7F9]">
-      <Header />
-      <Navbar />
-      <main className="max-w-[1440px] mx-auto px-6 py-8 md:px-16">
-        <Outlet /> 
-      </main>
-    </div>
-  );
-};
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <HomeLayout />,
-   
-  },
-  {
-    path: '/login',
-    element: <Login />,
-    action: loginAction(store)
-  },
-  {
-    path: '/register',
-    element: <Register />,
-    action: registerAction
-  }
-]);
-
-export default function App() {
-  return <RouterProvider router={router} />;
-}
+import { Link } from 'react-router-dom';
+import { AiFillHeart, AiFillBell } from 'react-icons/ai';
+import { FiSettings, FiUser } from 'react-icons/fi';
+import { BsSunFill, BsMoonFill } from 'react-icons/bs';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleTheme } from '../features/user/userSlice';
+import NavLinks from "./Navlinks";
 
 export default function Navbar() {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.userState.theme);
+
+  const changeTheme = () => {
+    dispatch(toggleTheme());
+  };
+
+  const isDark = theme === "dracula";
+
   return (
     <header className="w-full bg-white border-b border-[#C3D4E9]/40 px-6 py-5 md:px-16 flex flex-col md:flex-row items-center gap-4 md:gap-8">
       <div className="flex items-center justify-between w-full md:w-auto gap-4">
@@ -60,6 +36,16 @@ export default function Navbar() {
       </nav>
 
       <div className="hidden md:flex items-center gap-5 ml-auto">
+      <label className="swap swap-rotate btn btn-ghost btn-circle border border-[#C3D4E9]/40 hover:bg-[#F6F7F9] grid place-items-center cursor-pointer">
+          <input 
+            type="checkbox" 
+            checked={isDark} 
+            onChange={changeTheme} 
+          />
+          <BsSunFill className="swap-on w-5 h-5 text-yellow-500" />
+          <BsMoonFill className="swap-off w-5 h-5 text-[#596780]" />
+        </label>
+
         <button className="btn btn-ghost btn-circle border border-[#C3D4E9]/40 hover:bg-[#F6F7F9] flex items-center justify-center">
           <AiFillHeart className="w-5 h-5 text-[#596780]" />
         </button>
@@ -81,3 +67,4 @@ export default function Navbar() {
     </header>
   );
 }
+

@@ -1,3 +1,17 @@
+
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: all;
+}
+
+:root {
+  --p: #3563E9;      
+  --fallback-p: #3563E9;
+}
+
+@layer components {
+  .align-element {
+    @apply max-w-[1440px] px-8 md:px-16 m-auto;
+  }
+}
