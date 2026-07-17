@@ -19,7 +19,7 @@ export default function Navbar() {
   const isDark = theme === "dracula";
 
   return (
-    <header className="w-full bg-white border-b border-[#C3D4E9]/40 px-6 py-5 md:px-16 flex items-center gap-4 md:gap-8">
+    <header className="w-full bg-base-100 border-b border-[#C3D4E9]/40 px-6 py-5 md:px-16 flex items-center gap-4 md:gap-8">
       
       <div className="flex items-center gap-4">
 
@@ -28,7 +28,7 @@ export default function Navbar() {
         </Link>
 
         <div className="dropdown lg:hidden">
-          <label tabIndex={0} className="btn btn-ghost btn-circle border border-[#C3D4E9]/40">
+          <label tabIndex={0} className="btn btn-ghost btn-circle border  hover:bg-[#F6F7F9] border-[#C3D4E9]/40">
             <FaBarsStaggered className="w-5 h-5 text-[#596780]" />
           </label>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[50] p-2 shadow bg-white rounded-box w-52 border border-[#C3D4E9]/40">

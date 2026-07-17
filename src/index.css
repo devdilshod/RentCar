@@ -15,3 +15,7 @@
     @apply max-w-[1440px] px-8 md:px-16 m-auto;
   }
 }
+
+.scrollbar-hide {
+  scrollbar-width: none !important;
+}

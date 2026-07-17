@@ -1,4 +1,5 @@
 import daisyui from 'daisyui';
+import scrollbarHide from 'tailwind-scrollbar-hide';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -18,7 +19,10 @@ export default {
       }
     },
   },
-  plugins: [daisyui], 
+  plugins: [
+    daisyui,
+    scrollbarHide
+  ], 
   daisyui: {
     themes: ["winter", "dracula"], 
   },

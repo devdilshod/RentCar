@@ -6,13 +6,14 @@ import Login, { action as loginAction } from "./pages/Login";
 import Register, { action as registerAction } from "./pages/Register";
 import { store } from "./store";
 import Hero from './components/Hero';
+import PopularCars from './components/PopularCars';
+import RecommendationCars from './components/RecommendationCars';
 
 const HomeLayout = () => {
   return (
-    <div className="min-h-screen bg-[#F6F7F9] dark:bg-base-300 transition-colors duration-300">
+    <div className="min-h-screen bg-base-200  transition-colors duration-300">
       <Header />
       <Navbar />
-    
       <Outlet />
     </div>
   );
@@ -22,9 +23,11 @@ const LandingPage = () => {
   return (
     <>
       <Hero />
-      <main className="max-w-[1440px] mx-auto px-6 py-8 md:px-16">
+      <main className="max-w-[1440px]  mx-auto">
+        <PopularCars/>
+        <RecommendationCars />
       </main>
-    </>
+    </> 
   );
 };
 
