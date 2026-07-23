@@ -8,6 +8,7 @@ import { store } from "./store";
 import Hero from './components/Hero';
 import PopularCars from './components/PopularCars';
 import RecommendationCars from './components/RecommendationCars';
+import Catalog from './pages/Catalog';
 
 const HomeLayout = () => {
   return (
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <LandingPage />
+      },
+      {
+        path: 'catalog',
+        element: <Catalog/>
       }
     ]
   },
