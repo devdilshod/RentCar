@@ -25,7 +25,7 @@ export default function RecommendationCars() {
                 </div>
 
                 <div className="relative flex justify-center items-center mt-12 w-full">
-                    <Link to="/category">
+                    <Link to="/catalog">
                         <button className="btn btn-primary text-white capitalize px-8 py-3">
                             Show more car
                         </button>

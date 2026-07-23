@@ -155,9 +155,10 @@ export const recommendationCars = [
         type: "SUV",
         gasoline: "80L",
         transmission: "Manual",
-        people: "6 People",
+        people: "8 People",
         price: 80.00,
         image: "/images/rec-6.png",
         flip: true
     },
+    
 ];

@@ -34,17 +34,17 @@ export default function CarRentalCard({ car, rotation = "none", isRecommendation
                 <div className={`flex gap-3 text-sm text-base-content/60 
                     ${isRecommendation ? 'flex-col md:flex-row md:w-full md:justify-between' : 'w-full md:justify-between'}
                 `}>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
                         <FaGasPump size={20} className="text-base-content/50" />
-                        <span>{car.gasoline}</span>
+                        <span className='truncate'>{car.gasoline}</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
                         <FaCog size={20} className="text-base-content/50" />
-                        <span>{car.transmission}</span>
+                        <span className='truncate'>{car.transmission}</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
                         <FaUsers size={20} className="text-base-content/50" />
-                        <span>{car.people}</span>
+                        <span className='truncate'>{car.people}</span>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@ export default function CarRentalCard({ car, rotation = "none", isRecommendation
                     )}
                 </div>
                 <Link to={`/checkout/${car.id}`}>
-                    <button className="btn btn-primary px-6 rounded-lg text-white capitalize text-sm h-[44px] min-h-[44px]">
+                    <button className="btn btn-primary px-6 rounded-md text-white capitalize text-sm h-[44px] min-h-[44px]">
                         Rent Now
                     </button>
                 </Link>
@@ -66,6 +66,4 @@ export default function CarRentalCard({ car, rotation = "none", isRecommendation
         </div>
     );
 }
-
-
 
