@@ -13,9 +13,9 @@ export const getDates = () => {
         d.setDate(d.getDate() + i);
 
         const day = d.getDate();
-        const month = months[d.getMonth()]; // Oyni massivdan olamiz
+        const month = months[d.getMonth()]; 
 
-        return `${day} ${month}`; // "16 iyul" formatida qaytaradi
+        return `${day} ${month}`;
     });
 };
 
@@ -28,12 +28,12 @@ export const carsData = [
         id: "koenigsegg-1",
         name: "Koenigsegg",
         type: "Sport",
-        image: "/images/catalog-1.png", // mavjud rasm yo'lini yozing
+        image: "/images/catalog-1.png", 
         gasoline: "90L",
         transmission: "Manual",
         people: "2 People",
         price: 99.00,
-        oldPrice: null, // "Popular Car" bo'limiga chiqishi uchun
+        oldPrice: null, 
     },
     {
         id: "nissan-gtr-2",
@@ -127,6 +127,16 @@ export const recommendationCars = [
         people: "4 People",
         price: 74.00,
         image: "/images/rec-5.png"
+    }, {
+        id: "new-ms-1", 
+        name: "New MG ZS",
+        type: "Coupe",
+        gasoline: "80L",
+        transmission: "Manual",
+        people: "6 People",
+        price: 80.00,
+        image: "/images/rec-6.png",
+        flip: true
     },
     {
         id: "new-mg-zs-1", 

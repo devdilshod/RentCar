@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FaHeart, FaRegHeart, FaUsers, FaGasPump, FaCog } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-
 export default function CarRentalCard({ car, rotation = "none", isRecommendation = false }) {
     const [isLiked, setIsLiked] = useState(car.isFavorite);
     const flipClass = rotation === "-180" ? "scale-x-[-1]" : "";
@@ -34,17 +33,17 @@ export default function CarRentalCard({ car, rotation = "none", isRecommendation
                 <div className={`flex gap-3 text-sm text-base-content/60 
                     ${isRecommendation ? 'flex-col md:flex-row md:w-full md:justify-between' : 'w-full md:justify-between'}
                 `}>
-                    <div className="flex items-center gap-2 min-w-0">
+                    <div className="flex items-center gap-2">
                         <FaGasPump size={20} className="text-base-content/50" />
-                        <span className='truncate'>{car.gasoline}</span>
+                        <span>{car.gasoline}</span>
                     </div>
-                    <div className="flex items-center gap-2 min-w-0">
+                    <div className="flex items-center gap-2">
                         <FaCog size={20} className="text-base-content/50" />
-                        <span className='truncate'>{car.transmission}</span>
+                        <span>{car.transmission}</span>
                     </div>
-                    <div className="flex items-center gap-2 min-w-0">
+                    <div className="flex items-center gap-2">
                         <FaUsers size={20} className="text-base-content/50" />
-                        <span className='truncate'>{car.people}</span>
+                        <span>{car.people}</span>
                     </div>
                 </div>
             </div>
@@ -58,7 +57,7 @@ export default function CarRentalCard({ car, rotation = "none", isRecommendation
                     )}
                 </div>
                 <Link to={`/checkout/${car.id}`}>
-                    <button className="btn btn-primary px-6 rounded-md text-white capitalize text-sm h-[44px] min-h-[44px]">
+                    <button className="btn btn-primary px-6 rounded-lg text-white capitalize text-sm h-[44px] min-h-[44px]">
                         Rent Now
                     </button>
                 </Link>
@@ -66,4 +65,3 @@ export default function CarRentalCard({ car, rotation = "none", isRecommendation
         </div>
     );
 }
-

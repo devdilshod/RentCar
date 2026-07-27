@@ -5,7 +5,7 @@ export default function CarCard({ imgClass, id, title, rotation, description, bu
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
-        navigate('/category');
+        navigate('/catalog');
     };
 
     return (

@@ -31,7 +31,7 @@ export default function PickUpDropOff({
                     <select
                         value={pickup.city}
                         onChange={(e) => setPickup({ ...pickup, city: e.target.value })}
-                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent"
+                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent cursor-pointer"
                     >
                         <option value="">Select city</option>
                         {getLocations().map((city) => <option key={city}>{city}</option>)}
@@ -42,7 +42,7 @@ export default function PickUpDropOff({
                     <select
                         value={pickup.date}
                         onChange={(e) => setPickup({ ...pickup, date: e.target.value })}
-                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent"
+                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent cursor-pointer"
                     >
                         <option value="">Select date</option>
                         {getDates().map((date) => <option key={date}>{date}</option>)}
@@ -53,7 +53,7 @@ export default function PickUpDropOff({
                     <select
                         value={pickup.time}
                         onChange={(e) => setPickup({ ...pickup, time: e.target.value })}
-                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent"
+                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent cursor-pointer"
                     >
                         <option value="">Select time</option>
                         {getTimes().map((time) => <option key={time}>{time}</option>)}
@@ -64,7 +64,7 @@ export default function PickUpDropOff({
 
         <button
             onClick={handleSwap}
-            className="lg:absolute lg:left-1/2 lg:-translate-x-1/2 bg-[#3563E9] hover:bg-[#274ec7] text-white p-4 rounded-xl shadow-lg shadow-[#3562e969] transition-all z-20 flex items-center justify-center min-h-[56px] min-w-[56px] cursor-pointer">
+            className="lg:absolute lg:left-1/2 lg:-translate-x-1/2 bg-primary hover:bg-[#274ec7] text-white p-4 rounded-xl shadow-lg shadow-[#3562e969] transition-all z-20 flex items-center justify-center min-h-[56px] min-w-[56px] cursor-pointer">
             <HiArrowsUpDown className="w-6 h-6" />
         </button>
 
@@ -89,7 +89,7 @@ export default function PickUpDropOff({
                     <select
                         value={dropoff.city}
                         onChange={(e) => setDropoff({ ...dropoff, city: e.target.value })}
-                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent"
+                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent cursor-pointer"
                     >
                         <option value="">Select city</option>
                         {getLocations().map((city) => <option key={city}>{city}</option>)}
@@ -100,7 +100,7 @@ export default function PickUpDropOff({
                     <select
                         value={dropoff.date}
                         onChange={(e) => setDropoff({ ...dropoff, date: e.target.value })}
-                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent"
+                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent cursor-pointer"
                     >
                         <option value="">Select date</option>
                         {getDates().map((date) => <option key={date}>{date}</option>)}
@@ -111,7 +111,7 @@ export default function PickUpDropOff({
                     <select
                         value={dropoff.time}
                         onChange={(e) => setDropoff({ ...dropoff, time: e.target.value })}
-                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent"
+                        className="select select-ghost w-full p-0 min-h-0 h-auto text-xs md:text-sm bg-transparent cursor-pointer"
                     >
                         <option value="">Select time</option>
                         {getTimes().map((time) => <option key={time}>{time}</option>)}
