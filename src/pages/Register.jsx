@@ -16,50 +16,50 @@ export const action = async ({ request }) => {
 
 const Register = () => {
     return (
-        <section className="h-screen grid place-items-center bg-[#F6F7F9]">
-            <Form method="POST" className="w-full max-w-100 p-8 bg-white border border-[#C3D4E9]/50 rounded-2xl shadow-sm flex flex-col gap-y-4">
+        <section className="h-screen grid place-items-center bg-base-200 transition-colors duration-300 px-4">
+            <Form method="POST" className="w-full max-w-md p-8 bg-base-100 border border-base-300 rounded-2xl shadow-sm flex flex-col gap-y-4">
                 <div className="text-center space-y-1 mb-2">
-                    <h2 className="text-[#3563E9] text-3xl font-bold tracking-tight">MORENT</h2>
-                    <p className="text-sm text-[#596780] font-medium">Create a new account</p>
+                    <h2 className="text-primary text-3xl font-bold tracking-tight">MORENT</h2>
+                    <p className="text-sm text-base-content/60 font-medium">Create a new account</p>
                 </div>
 
                 <div className="form-control w-full">
-                    <label className="label text-sm font-semibold text-[#1A202C]">Username</label>
+                    <label className="label text-sm font-semibold text-base-content">Username</label>
                     <input 
                         type="text" 
                         name="username" 
                         placeholder="Enter your name"
-                        className="input input-bordered w-full bg-white border-[#C3D4E9] text-[#1A202C] focus:border-[#3563E9] rounded-xl h-12 px-4" 
+                        className="input input-bordered w-full bg-base-100 border-base-300 text-base-content focus:border-primary rounded-xl h-12 px-4" 
                     />
                 </div>
 
                 <div className="form-control w-full">
-                    <label className="label text-sm font-semibold text-[#1A202C]">Email Address</label>
+                    <label className="label text-sm font-semibold text-base-content">Email Address</label>
                     <input 
                         type="email" 
                         name="email" 
                         placeholder="example@gmail.com"
-                        className="input input-bordered w-full bg-white border-[#C3D4E9]  text-[#1A202C] focus:border-[#3563E9] rounded-xl h-12 px-4" 
+                        className="input input-bordered w-full bg-base-100 border-base-300 text-base-content focus:border-primary rounded-xl h-12 px-4" 
                     />
                 </div>
 
                 <div className="form-control w-full">
-                    <label className="label text-sm font-semibold text-[#1A202C]">Password</label>
+                    <label className="label text-sm font-semibold text-base-content">Password</label>
                     <input 
                         type="password" 
                         name="password" 
                         placeholder="******"
-                        className="input input-bordered w-full bg-white border-[#C3D4E9] text-[#1A202C] focus:border-[#3563E9] rounded-xl h-12 px-4" 
+                        className="input input-bordered w-full bg-base-100 border-base-300 text-base-content focus:border-primary rounded-xl h-12 px-4" 
                     />
                 </div>
 
-                <button type="submit" className="w-full bg-[#3563E9] hover:bg-[#2A52D4] text-white font-semibold py-3 rounded-xl mt-2 transition-colors cursor-pointer">
+                <button type="submit" className="w-full btn btn-primary text-white font-semibold py-3 rounded-xl mt-2 transition-colors cursor-pointer">
                     REGISTER
                 </button>
 
-                <p className="text-center text-sm text-[#596780] font-medium mt-2">
-                Already a member?
-                    <Link to="/login" className="text-[#3563E9] hover:underline ml-1 font-semibold">Sign In</Link>
+                <p className="text-center text-sm text-base-content/60 font-medium mt-2">
+                    Already a member?
+                    <Link to="/login" className="text-primary hover:underline ml-1 font-semibold">Sign In</Link>
                 </p>
             </Form>
         </section>

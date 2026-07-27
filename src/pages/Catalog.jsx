@@ -34,7 +34,7 @@ export default function Catalog() {
     const displayedCars = filteredCars.slice(0, visibleCount);
 
     return (
-        <div className="min-h-screen bg-[#F6F7F9] flex flex-col">
+        <div className="min-h-screen bg-base-200 flex flex-col transition-colors duration-300">
 
             <div className="xl:hidden px-6 py-4 bg-base-100 border-b border-base-300 flex justify-between items-center shadow-sm">
                 <span className="font-bold text-base-content text-lg">Filters Menu</span>
@@ -64,7 +64,7 @@ export default function Catalog() {
                         </button>
                     </div>
 
-                    <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Type</h2>
+                    <h2 className="text-xs font-bold text-base-content/60 uppercase tracking-widest mb-6">Type</h2>
                     {['Sport', 'SUV', 'MPV', 'Sedan', 'Coupe', 'Hatchback'].map(type => (
                         <label key={type} className="flex items-center gap-3 mb-6 cursor-pointer">
                             <input
@@ -74,12 +74,12 @@ export default function Catalog() {
                                 onChange={() => setSelectedTypes(prev => prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type])}
                             />
                             <span className="text-lg xl:text-xl font-semibold text-base-content">
-                                {type} <span className="text-gray-400 text-sm font-normal">({recommendationCars.filter(c => c.type === type).length})</span>
+                                {type} <span className="text-base-content/60 text-sm font-normal">({recommendationCars.filter(c => c.type === type).length})</span>
                             </span>
                         </label>
                     ))}
 
-                    <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-12 mb-6">Capacity</h2>
+                    <h2 className="text-xs font-bold text-base-content/60 uppercase tracking-widest mt-12 mb-6">Capacity</h2>
                     {['2', '4', '6', '8'].map(cap => (
                         <label key={cap} className="flex items-center gap-3 mb-6 cursor-pointer">
                             <input
@@ -90,14 +90,14 @@ export default function Catalog() {
                             />
                             <span className="text-lg xl:text-xl font-semibold text-base-content">
                                 {cap === '8' ? '8 or More' : `${cap} Person`}
-                                <span className="text-gray-400 text-sm font-normal">
+                                <span className="text-base-content/60 text-sm font-normal">
                                     ({recommendationCars.filter(c => String(c.people).includes(cap)).length})
                                 </span>
                             </span>
                         </label>
                     ))}
 
-                    <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-12 mb-6">Price</h2>
+                    <h2 className="text-xs font-bold text-base-content/60 uppercase tracking-widest mt-12 mb-6">Price</h2>
                     <input
                         type="range"
                         min="0"
@@ -121,7 +121,11 @@ export default function Catalog() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {displayedCars.map((car) => (
-                            <CarRentalCard key={car.id} car={car} rotation={car.flip ? "-180" : "none"} />
+                            <CarRentalCard
+                                key={car.id}
+                                car={car}
+                                rotation={car.flip ? "-180" : "none"}
+                                isRecommendation={true} />
                         ))}
                     </div>
 
@@ -137,7 +141,7 @@ export default function Catalog() {
                             )}
                         </div>
 
-                        <div className="ml-auto text-gray-400 font-medium text-sm">
+                        <div className="ml-auto text-base-content/60 font-medium text-sm">
                             {filteredCars.length} Car{filteredCars.length !== 1 ? 's' : ''}
                         </div>
                     </div>

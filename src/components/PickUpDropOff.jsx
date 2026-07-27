@@ -64,7 +64,7 @@ export default function PickUpDropOff({
 
         <button
             onClick={handleSwap}
-            className="lg:absolute lg:left-1/2 lg:-translate-x-1/2 bg-primary hover:bg-[#274ec7] text-white p-4 rounded-xl shadow-lg shadow-[#3562e969] transition-all z-20 flex items-center justify-center min-h-[56px] min-w-[56px] cursor-pointer">
+            className="lg:absolute lg:left-1/2 lg:-translate-x-1/2 bg-primary hover:bg-primary/90 text-white p-4 rounded-xl shadow-lg shadow-primary/20 transition-all z-20 flex items-center justify-center min-h-[56px] min-w-[56px] cursor-pointer">
             <HiArrowsUpDown className="w-6 h-6" />
         </button>
 

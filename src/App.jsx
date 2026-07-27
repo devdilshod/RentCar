@@ -9,6 +9,7 @@ import Hero from './components/Hero';
 import PopularCars from './components/PopularCars';
 import RecommendationCars from './components/RecommendationCars';
 import Catalog from './pages/Catalog';
+import Favorites from './pages/Favorites';
 
 const HomeLayout = () => {
   return (
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: 'catalog',
         element: <Catalog/>
+      },
+      {
+        path: 'favorites',
+        element: <Favorites/>
       }
     ]
   },

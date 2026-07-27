@@ -1,0 +1,13 @@
+[33mf9e0a90[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: commit: CarFavorite finished
+[33mb5d5e06[m HEAD@{1}: reset: moving to HEAD^
+[33md2c86b3[m HEAD@{2}: commit (amend): refactor: convert favorite component to page
+[33mdd5dab8[m HEAD@{3}: commit: CarFavorites finished
+[33mb5d5e06[m HEAD@{4}: commit: Catalog page finished
+[33m26af0f5[m HEAD@{5}: commit: Catalog page started
+[33m1d52d0d[m HEAD@{6}: commit: popularCars & recommendationCars finished
+[33m15d975f[m HEAD@{7}: commit: popularCars & recommendationCars started
+[33m53053ba[m HEAD@{8}: commit: hero section finished
+[33me2217e0[m HEAD@{9}: commit: login&register header&navbar end
+[33mf886594[m HEAD@{10}: commit: daisyui & tailwindcss added
+[33m69b7753[m HEAD@{11}: Branch: renamed refs/heads/master to refs/heads/main
+[33m69b7753[m HEAD@{13}: commit (initial): project started

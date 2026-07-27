@@ -25,8 +25,8 @@ const Navlinks = () => {
             className={({ isActive }) =>
               `text-sm font-medium transition-all duration-200 py-1 border-b-2 ${
                 isActive
-                  ? "text-[#3563E9] border-[#3563E9] font-semibold" 
-                  : "text-[#596780] border-transparent hover:text-[#3563E9]" 
+                  ? "text-primary border-primary font-semibold" 
+                  : "text-base-content/60 border-transparent hover:text-primary" 
               }`
             }
           >
@@ -39,6 +39,3 @@ const Navlinks = () => {
 };
 
 export default Navlinks;
-
-
-// [#3563E9]
