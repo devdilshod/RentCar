@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaHeart, FaRegHeart, FaUsers, FaGasPump, FaCog } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function CarRentalCard({ car, rotation = "none", isRecommendation = false, onToggleFavorite }) {
+    const navigate = useNavigate();
     const [isFavorite, setIsFavorite] = useState(() => {
         const saved = localStorage.getItem('carFavorites');
         if (saved) {
@@ -16,7 +17,8 @@ export default function CarRentalCard({ car, rotation = "none", isRecommendation
 
     const handleToggleFavorite = (e) => {
         e.preventDefault();
-        
+        e.stopPropagation();
+
         const saved = localStorage.getItem('carFavorites');
         let favorites = saved ? JSON.parse(saved) : [];
 
@@ -35,18 +37,25 @@ export default function CarRentalCard({ car, rotation = "none", isRecommendation
         }
     };
 
+    const handleCardClick = () => {
+        navigate(`/car/${car.id}`);
+    };
+
     return (
-        <div className="bg-base-100 rounded-xl p-6 flex flex-col justify-between h-full w-full min-h-[380px] shadow-sm">
+        <div 
+            onClick={handleCardClick}
+            className="bg-base-100 rounded-xl p-6 flex flex-col justify-between h-full w-full min-h-[380px] cursor-pointer shadow-sm hover:shadow-md transition-shadow"
+        >
             <div className="flex items-start justify-between">
                 <div>
                     <h3 className="text-xl font-bold text-base-content">{car.name}</h3>
                     <p className="text-sm text-base-content/60">{car.type}</p>
                 </div>
-                
-                <button 
+
+                <button
                     type="button"
-                    onClick={handleToggleFavorite} 
-                    className="p-2 cursor-pointer bg-transparent border-none outline-none focus:outline-none hover:scale-110 transition-transform"
+                    onClick={handleToggleFavorite}
+                    className="p-2 cursor-pointer bg-transparent border-none outline-none focus:outline-none hover:scale-110 transition-transform z-10"
                 >
                     {isFavorite ? (
                         <FaHeart size={24} className="text-[#ED3F3F]" />
@@ -93,7 +102,7 @@ export default function CarRentalCard({ car, rotation = "none", isRecommendation
                         <p className="text-sm text-base-content/40 line-through">${car.oldPrice.toFixed(2)}</p>
                     )}
                 </div>
-                <Link to={`/checkout/${car.id}`}>
+                <Link to={`/checkout/${car.id}`} onClick={(e) => e.stopPropagation()}>
                     <button className="btn btn-primary px-6 rounded-lg text-white capitalize text-sm h-[44px] min-h-[44px]">
                         Rent Now
                     </button>

@@ -10,6 +10,7 @@ import PopularCars from './components/PopularCars';
 import RecommendationCars from './components/RecommendationCars';
 import Catalog from './pages/Catalog';
 import Favorites from './pages/Favorites';
+import SingleProduct from './pages/SingleProduct';
 
 const HomeLayout = () => {
   return (
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: 'favorites',
         element: <Favorites/>
+      },
+      {
+        path: 'car/:id',
+        element: <SingleProduct />
       }
     ]
   },
