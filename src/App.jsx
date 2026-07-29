@@ -11,13 +11,17 @@ import RecommendationCars from './components/RecommendationCars';
 import Catalog from './pages/Catalog';
 import Favorites from './pages/Favorites';
 import SingleProduct from './pages/SingleProduct';
+import Footer from './components/Footer';
 
 const HomeLayout = () => {
   return (
-    <div className="min-h-screen bg-base-200  transition-colors duration-300">
-      <Header />
-      <Navbar />
-      <Outlet />
+    <div className="min-h-screen bg-base-200 transition-colors duration-300 flex flex-col justify-between">
+      <div>
+        <Header />
+        <Navbar />
+        <Outlet />
+      </div>
+      <Footer /> {/* Footerni shu yerga qo'shamiz */}
     </div>
   );
 };
@@ -27,10 +31,10 @@ const LandingPage = () => {
     <>
       <Hero />
       <main className="max-w-[1440px]  mx-auto">
-        <PopularCars/>
+        <PopularCars />
         <RecommendationCars />
       </main>
-    </> 
+    </>
   );
 };
 
@@ -45,11 +49,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'catalog',
-        element: <Catalog/>
+        element: <Catalog />
       },
       {
         path: 'favorites',
-        element: <Favorites/>
+        element: <Favorites />
       },
       {
         path: 'car/:id',
