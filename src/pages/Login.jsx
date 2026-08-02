@@ -18,10 +18,10 @@ export const action = (store) => async ({ request }) => {
     };
 
     store.dispatch(loginUser(fakeUser));
-    toast.success("Login in successfully");
+    toast.success("Logged in successfully");
 
     return redirect("/");
-}
+};
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -32,10 +32,10 @@ const Login = () => {
         dispatch(loginUser(guestUser));
         toast.success("Welcome Guest User");
         navigate("/");
-    }
+    };
 
     return (
-        <section className="h-screen grid place-items-center bg-base-200 transition-colors duration-300 px-4">
+        <section className="h-screen grid place-items-center bg-base-200 transition-colors -300 px-4">
             <Form method="POST" className="w-full max-w-md p-8 bg-base-100 border border-base-300 rounded-2xl shadow-sm flex flex-col gap-y-4">
                 <div className="text-center space-y-1 mb-2">
                     <h2 className="text-primary text-3xl font-bold tracking-tight">MORENT</h2>
@@ -75,6 +75,6 @@ const Login = () => {
             </Form>
         </section>
     );
-}
+};
 
 export default Login;

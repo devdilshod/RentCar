@@ -10,7 +10,7 @@ export default function PickUpDropOff({
 }) {
     return (
         <div className="relative flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-0 w-full mt-4">
-        <div className="w-full lg:w-[46%] bg-base-100 rounded-xl p-6 shadow-sm border border-base-300 transition-colors duration-300">
+        <div className="w-full lg:w-[46%] bg-base-100 rounded-xl p-6 shadow-sm border border-base-300 transition-colors">
             <div className="flex items-center gap-2 mb-4">
                 <input
                     type="radio"
@@ -68,7 +68,7 @@ export default function PickUpDropOff({
             <HiArrowsUpDown className="w-6 h-6" />
         </button>
 
-        <div className="w-full lg:w-[46%] bg-base-100 rounded-xl p-6 shadow-sm border border-base-300 transition-colors duration-300">
+        <div className="w-full lg:w-[46%] bg-base-100 rounded-xl p-6 shadow-sm border border-base-300 transition-colors">
             <div className="flex items-center gap-2 mb-4">
                 <input
                     type="radio"

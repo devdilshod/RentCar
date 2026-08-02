@@ -9,11 +9,11 @@ const Header = () => {
 
     const handleLogout = () => {
         dispatch(logoutUser())
-        toast.success("Logged out successfully!"); 
+        toast.error("Logged out successfully!"); 
     }
 
     return (
-        <header className="bg-primary py-3 text-neutral-content transition-colors duration-300">
+        <header className="bg-primary py-3 text-neutral-content transition-colors">
             <div className="align-element flex justify-center sm:justify-end px-6 md:px-16">
                 {
                     user ? <div className="flex gap-x-2 sm:gap-8 items-center">

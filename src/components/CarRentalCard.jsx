@@ -72,7 +72,7 @@ export default function CarRentalCard({ car, rotation = "none", isRecommendation
                     <img
                         src={car.image}
                         alt={car.name}
-                        className={`w-full max-w-[220px] object-contain transition-transform duration-300 ${flipClass}`}
+                        className={`w-full max-w-[220px] object-contain transition-transform ${flipClass}`}
                     />
                 </div>
 

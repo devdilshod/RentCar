@@ -23,7 +23,7 @@ const Navlinks = () => {
             key={link.id}
             to={link.url}
             className={({ isActive }) =>
-              `text-sm font-medium transition-all duration-200 py-1 border-b-2 ${
+              `text-sm font-medium transition-all -200 py-1 border-b-2 ${
                 isActive
                   ? "text-primary border-primary font-semibold" 
                   : "text-base-content/60 border-transparent hover:text-primary" 

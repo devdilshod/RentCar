@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function CarCard({ imgClass, id, title, rotation, description, buttonText, buttonColor, bgColor, carImage }) {
+export default function CarCard({ id, imgClass, title, rotation, description, buttonText, buttonColor, bgColor, carImage, isGtrBg }) {
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
@@ -10,10 +10,9 @@ export default function CarCard({ imgClass, id, title, rotation, description, bu
 
     return (
         <div
-            className="text-white rounded-xl p-6 md:p-8 flex flex-col justify-between h-auto min-h-[280px] md:min-h-[360px] relative overflow-hidden shadow-sm transition-all duration-300"
+            className={`text-white rounded-xl p-6 md:p-8 flex flex-col justify-between h-auto min-h-[280px] md:min-h-[360px] relative overflow-hidden shadow-sm transition-all -300 ${isGtrBg ? 'bg-primary' : ''}`}
             style={{ backgroundColor: bgColor }}
         >
-            
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div className="absolute rounded-full border-[20px] border-white/5" style={{ width: '775px', height: '775px', top: '-83px', left: '-157px' }} />
                 <div className="absolute rounded-full border-[20px] border-white/5" style={{ width: '625px', height: '625px', top: '-8px', left: '-82px' }} />
@@ -40,7 +39,7 @@ export default function CarCard({ imgClass, id, title, rotation, description, bu
             <img
                 src={carImage}
                 alt={title}
-                className={`absolute z-20 object-contain pointer-events-none transition-all duration-300 ${imgClass} ${rotation === "-180" ? "scale-x-[-1]" : ""}`}
+                className={`absolute z-20 object-contain pointer-events-none transition-all -300 ${imgClass} ${rotation === -180 ? "scale-x-[-1]" : ""}`}
                 style={{
                     width: '400px',
                     height: '250px',

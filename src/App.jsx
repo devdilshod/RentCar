@@ -11,17 +11,18 @@ import RecommendationCars from './components/RecommendationCars';
 import Catalog from './pages/Catalog';
 import Favorites from './pages/Favorites';
 import SingleProduct from './pages/SingleProduct';
+import Checkout from './pages/Checkout';
 import Footer from './components/Footer';
 
 const HomeLayout = () => {
   return (
-    <div className="min-h-screen bg-base-200 transition-colors duration-300 flex flex-col justify-between">
+    <div className="min-h-screen bg-base-200 transition-colors -300 flex flex-col justify-between">
       <div>
         <Header />
         <Navbar />
         <Outlet />
       </div>
-      <Footer /> {/* Footerni shu yerga qo'shamiz */}
+      <Footer />
     </div>
   );
 };
@@ -30,7 +31,7 @@ const LandingPage = () => {
   return (
     <>
       <Hero />
-      <main className="max-w-[1440px]  mx-auto">
+      <main className="max-w-[1440px]  mx-auto">
         <PopularCars />
         <RecommendationCars />
       </main>
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: 'car/:id',
         element: <SingleProduct />
+      },
+      {
+        path: 'checkout/:id?',
+        element: <Checkout />
       }
     ]
   },

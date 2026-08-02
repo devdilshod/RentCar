@@ -3,7 +3,6 @@ import CarCard from './CarCard';
 import PickUpDropOff from '../components/PickUpDropOff';
 
 export default function Hero() {
-
     const [pickup, setPickup] = useState({ city: "", date: "", time: "" });
     const [dropoff, setDropoff] = useState({ city: "", date: "", time: "" });
     const [bookingType, setBookingType] = useState("pickup");
@@ -15,7 +14,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="w-full  px-6 py-8 md:px-16 transition-colors duration-300">
+        <section className="w-full px-6 py-8 md:px-16 transition-colors -300">
             <div className="max-w-[1440px] mx-auto flex flex-col gap-8">
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -44,12 +43,10 @@ export default function Hero() {
                             bgColor="#3563E9"
                             carImage="/images/image-2.png"
                             isGtrBg={true}
-                            rotation="-180"
+                            rotation={-180}
                             imgClass="bottom-[-18%] right-[5%] md:right-[10%] md:bottom-[-14%] xl:bottom-[-8%] xl:right-[8%]"
                         />
                     </div>
-
-
                 </div>
 
                 <PickUpDropOff

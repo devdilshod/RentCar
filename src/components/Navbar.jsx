@@ -19,8 +19,8 @@ export default function Navbar() {
   const isDark = theme === "dracula";
 
   return (
-    <header className="w-full bg-base-100 border-b border-base-300 px-6 py-5 md:px-16 flex items-center gap-4 md:gap-8 transition-colors duration-300">
-      
+    <header className="w-full bg-base-100 border-b border-base-300 px-6 py-5 md:px-16 flex items-center gap-4 md:gap-8 transition-colors">
+
       <div className="flex items-center gap-4">
         <Link to="/" className="text-primary text-3xl font-bold tracking-tight cursor-pointer">
           MORENT
@@ -47,10 +47,10 @@ export default function Navbar() {
           <BsMoonFill className="swap-off w-5 h-5 text-base-content/70" />
         </label>
 
-        <Link to="/favorites" className="btn btn-ghost btn-circle border border-base-300 hover:bg-base-200 hidden md:flex items-center justify-center">
+        <Link to="/favorites" className="btn btn-ghost btn-circle border border-base-300 hover:bg-base-200 flex items-center justify-center">
           <AiFillHeart className="w-5 h-5 text-base-content/70" />
         </Link>
-        
+
         <button className="btn btn-ghost btn-circle border border-base-300 hover:bg-base-200 relative hidden md:flex items-center justify-center">
           <AiFillBell className="w-5 h-5 text-base-content/70" />
           <span className="absolute top-0 right-1.5 w-[10px] h-[10px] bg-[#ED3F3F] rounded-full"></span>

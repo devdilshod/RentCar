@@ -8,7 +8,7 @@ export default function PopularCars() {
     const popularCars = carsData;
 
     return (
-        <section className="w-full bg-base-200 px-6 py-8 md:px-16 transition-colors duration-300 mt-4">
+        <section className="w-full bg-base-200 px-6 py-8 md:px-16 transition-colors -300 mt-4">
             <div className="max-w-[1440px] mx-auto">
                 
             <SectionTitle title="Popular Car" to="/catalog" />

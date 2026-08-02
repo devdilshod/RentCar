@@ -13,11 +13,13 @@ export default function Favorites() {
     }, []);
 
     const handleRemoveFavorite = (car) => {
-        setFavorites(prev => prev.filter(item => item.id !== car.id));
+        const updatedFavorites = favorites.filter(item => item.id !== car.id);
+        setFavorites(updatedFavorites);
+        localStorage.setItem('carFavorites', JSON.stringify(updatedFavorites));
     };
 
     return (
-        <div className="min-h-screen bg-base-200 px-6 py-8 md:px-16 transition-colors duration-300">
+        <div className="min-h-screen bg-base-200 px-6 py-8 md:px-16 transition-colors -300">
             <div className="max-w-7xl mx-auto">
                 <h1 className="text-2xl font-bold text-base-content mb-6">My Favorite Cars</h1>
 
@@ -25,7 +27,7 @@ export default function Favorites() {
                     <div className="text-center py-20 bg-base-100 rounded-xl shadow-sm">
                         <p className="text-lg text-base-content/60 mb-4">No favorite cars yet.</p>
                         <Link to="/catalog" className="btn btn-primary text-white capitalize">
-                        View cars
+                            View cars
                         </Link>
                     </div>
                 ) : (
